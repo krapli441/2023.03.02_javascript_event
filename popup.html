@@ -55,6 +55,7 @@
 
   <aside id="pop-up">
     <button>닫기</button>
+    <p>공욱재는 미남이다</p>
   </aside>
 
   <div id="root">
@@ -64,11 +65,22 @@
   </div>
 
   <script>
+    const root = document.getElementById('root');
     const popUp = document.getElementById('pop-up'); // id를 통해 pop-up 식별
     const closeBtn = popUp.children[0];
 
     closeBtn.addEventListener("click", function() {
       closeBtn.parentElement.style.display = "none"; // 누르면, 사라진 것처럼 보임 (데이터는 남아있음)
+      const root = document.getElementById('root');
+      const newPtag = document.createElement("p");
+      const newText = document.createTextNode("공욱재는 미이니니암");
+      newPtag.appendChild(newText);
+      root.children[0].appendChild(newPtag);
+      // root.children[0].innerHTML = "<p>공욱재는 미이남이다</p>";
+    })
+
+    root.children[2].addEventListener("click", function() {
+      popUp.style.display = "block";
     })
 
   </script>
