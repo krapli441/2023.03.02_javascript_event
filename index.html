@@ -7,6 +7,63 @@
   <title>Document</title>
 </head>
 <body>
+  <div id="root">
+    <ul id ="menu">
+      <li>item-1</li>
+      <li>item-2</li>
+      <li>item-3</li>
+      <li>item-4</li>
+      <li>item-5</li>
+    </ul>
+  </div>
   
+  <script>
+    const menu = document.getElementById('menu');
+    const firstli = document.querySelector('#menu > li:nth-child(1)');
+
+
+    let ddockddack = true;
+    for (let i = 0; i < menu.children.length; i++) {
+      menu.children[i].style.color = "pink";
+      if (ddockddack === true) {
+        menu.children[i].addEventListener("click", function() {
+          menu.children[i].style.color = "orange";
+        });
+        ddockddack = false;
+      } else {
+        menu.children[i].addEventListener("click", function() {
+          menu.children[i].style.color = "blue";
+        });   
+        ddockddack = true;     
+      }
+    }
+
+
+    // menu.children[1].addEventListener("click", function() {
+    //   menu.children[1].style.color = "cadetblue";
+    // });
+
+    // menu.children[2].addEventListener("click", function() {
+    //   menu.children[2].style.color = "blue";
+    // });
+
+    // menu.children[3].addEventListener("click", function() {
+    //   menu.children[3].style.color = "red";
+    // });
+
+    // menu.children[4].addEventListener("click", function() {
+    //   menu.children[4].style.color = "blue";
+    // });
+
+    // for (let i = menu.children.length; i > 0; i--) {
+    //   menu.children[i].style.color = "pink";
+    // }
+
+    // menu.children[0].style.color = "pink";
+    // menu.children[1].style.color = "pink";
+    // menu.children[2].style.color = "pink";
+    // menu.children[3].style.color = "pink";
+    // menu.children[4].style.color = "pink";
+  </script>
 </body>
 </html>
