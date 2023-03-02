@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin:0; 
+      padding:0; 
+      box-sizing: 
+      border-box;
+    }
+
+    #pop-up {
+      width: 300px;
+      height: 300px;
+      background-color: aquamarine;
+      position: fixed;
+      top: 100px;
+      left: 100px;
+    }
+
+    #pop-up > button {
+      width: 100px;
+      height: 100px;
+    }
+
+    #root {
+      width: 100vw;
+      height: 300vw;
+      background-color: rgb(92, 92, 92);
+    }
+
+    #root > section {
+      width: 100%;
+      height: 100vh;
+      border : 1px solid black;
+    }
+
+    #root > section:nth-child(1) {
+      background-color: pink;
+    }
+
+    #root > section:nth-child(2) {
+      background-color: chocolate;
+    }
+    #root > section:nth-child(3) {
+      background-color: darkorchid;
+    }
+  </style>
+</head>
+<body>
+
+  <aside id="pop-up">
+    <button>닫기</button>
+  </aside>
+
+  <div id="root">
+    <section></section>
+    <section></section>
+    <section></section>
+  </div>
+
+  <script>
+    const popUp = document.getElementById('pop-up'); // id를 통해 pop-up 식별
+    const closeBtn = popUp.children[0];
+
+    closeBtn.addEventListener("click", function() {
+      closeBtn.parentElement.style.display = "none"; // 누르면, 사라진 것처럼 보임 (데이터는 남아있음)
+    })
+
+  </script>
+</body>
+</html>
