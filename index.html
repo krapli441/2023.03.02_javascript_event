@@ -21,22 +21,36 @@
     const menu = document.getElementById('menu');
     const firstli = document.querySelector('#menu > li:nth-child(1)');
 
-
-    let ddockddack = true;
-    for (let i = 0; i < menu.children.length; i++) {
-      menu.children[i].style.color = "pink";
-      if (ddockddack === true) {
-        menu.children[i].addEventListener("click", function() {
-          menu.children[i].style.color = "orange";
-        });
-        ddockddack = false;
+    let switchValue = true;
+    menu.addEventListener("click", function() {
+      if(switchValue === true) {
+        for (let i = 0; i < menu.children.length; i++) {
+          menu.children[i].style.color = "pink";
+        }
+        switchValue = false;
       } else {
-        menu.children[i].addEventListener("click", function() {
+        for (let i = 0; i < menu.children.length; i++) {
           menu.children[i].style.color = "blue";
-        });   
-        ddockddack = true;     
+        }
+        switchValue = true;
       }
-    }
+    });
+
+
+
+    // let ddockddack = true;
+    // for (let i = 0; i < menu.children.length; i++) {
+    //   menu.children[i].style.color = "pink";
+    //   if (ddockddack === true) {
+    //     menu.children[i].addEventListener("click", function() {
+    //       menu.children[i].style.color = "orange";
+    //     });
+    //   } else {
+    //     menu.children[i].addEventListener("click", function() {
+    //       menu.children[i].style.color = "blue";
+    //     }); 
+    //   }
+    // }
 
 
     // menu.children[1].addEventListener("click", function() {
