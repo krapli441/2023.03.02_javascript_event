@@ -26,11 +26,13 @@
       if(switchValue === true) {
         for (let i = 0; i < menu.children.length; i++) {
           menu.children[i].style.color = "pink";
+          menu.style.backgroundColor = "black";
         }
         switchValue = false;
       } else {
         for (let i = 0; i < menu.children.length; i++) {
           menu.children[i].style.color = "blue";
+          menu.style.backgroundColor = "grey";
         }
         switchValue = true;
       }
